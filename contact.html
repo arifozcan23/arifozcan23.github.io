@@ -18,11 +18,17 @@
                 </a>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="about.html">Hakkımda</a></li>
-                <li><a href="portfolio.html">Portföy</a></li>
-                <li><a href="contact.html" class="active">İletişim</a></li>
+                <li><a href="index.html" data-translate="nav_home">Ana Sayfa</a></li>
+                <li><a href="about.html" data-translate="nav_about">Hakkımda</a></li>
+                <li><a href="portfolio.html" data-translate="nav_portfolio">Portföy</a></li>
+                <li><a href="contact.html" class="active" data-translate="nav_contact">İletişim</a></li>
             </ul>
+            <!-- Dil Seçici -->
+            <div class="language-switcher">
+                <button class="language-btn lang-tr active" data-translate="lang_tr">Türkçe</button>
+                <span>|</span>
+                <button class="language-btn lang-en" data-translate="lang_en">English</button>
+            </div>
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -35,8 +41,8 @@
         <!-- Başlık Section -->
         <section class="page-header">
             <div class="container">
-                <h1>İletişim</h1>
-                <p>Benimle iletişime geçin</p>
+                <h1 data-translate="nav_contact">İletişim</h1>
+                <p data-translate="contact_subtitle">Benimle iletişime geçin</p>
             </div>
         </section>
 
@@ -46,13 +52,13 @@
                 <div class="contact-container">
                     <!-- İletişim Bilgileri -->
                     <div class="contact-info">
-                        <h2>İletişim Bilgilerim</h2>
+                        <h2 data-translate="contact_info_title">İletişim Bilgilerim</h2>
                         <div class="info-item">
                             <div class="info-icon">
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div class="info-content">
-                                <h3>E-posta</h3>
+                                <h3 data-translate="contact_email">E-posta</h3>
                                 <p>zcanarif@gmail.com</p>
                             </div>
                         </div>
@@ -61,7 +67,7 @@
                                 <i class="fas fa-phone"></i>
                             </div>
                             <div class="info-content">
-                                <h3>Telefon</h3>
+                                <h3 data-translate="contact_phone">Telefon</h3>
                                 <p>+90 (553) 674 63 22</p>
                             </div>
                         </div>
@@ -70,12 +76,12 @@
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div class="info-content">
-                                <h3>Konum</h3>
+                                <h3 data-translate="contact_location">Konum</h3>
                                 <p>Türkiye</p>
                             </div>
                         </div>
                         <div class="social-links-contact">
-                            <h3>Sosyal Medya</h3>
+                            <h3 data-translate="contact_social">Sosyal Medya</h3>
                             <div class="social-icons">
                                 <a href="https://linkedin.com/in/arifozcan35" target="_blank" aria-label="LinkedIn">
                                     <i class="fab fa-linkedin"></i>
@@ -92,13 +98,13 @@
 
                     <!-- E-posta Gönderme Seçeneği -->
                     <div class="contact-email-container">
-                        <h2>Mesaj Gönder</h2>
-                        <p>Bana doğrudan e-posta göndermek için aşağıdaki butona tıklayın:</p>
+                        <h2 data-translate="contact_send_message">Mesaj Gönder</h2>
+                        <p data-translate="contact_email_info">Bana doğrudan e-posta göndermek için aşağıdaki butona tıklayın:</p>
                         <a href="mailto:zcanarif@gmail.com" class="email-btn">
-                            <i class="fas fa-envelope"></i> E-posta Gönder
+                            <i class="fas fa-envelope"></i> <span data-translate="contact_send_email">E-posta Gönder</span>
                         </a>
                         <div class="email-info">
-                            <p>Bu buton, bilgisayarınızın varsayılan e-posta uygulamasını açacaktır.</p>
+                            <p data-translate="contact_email_note">Bu buton, bilgisayarınızın varsayılan e-posta uygulamasını açacaktır.</p>
                         </div>
                     </div>
                 </div>
@@ -116,7 +122,7 @@
                 <a href="https://github.com/arifozcan23" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 <a href="https://instagram.com/0zcanarif" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
-            <p>&copy; 2025 Arif Özcan. Tüm hakları saklıdır.</p>
+            <p>&copy; 2025 Arif Özcan. <span data-translate="footer_rights">Tüm hakları saklıdır.</span></p>
         </div>
     </footer>
 

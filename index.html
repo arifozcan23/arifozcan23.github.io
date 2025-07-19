@@ -18,11 +18,17 @@
                 </a>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Ana Sayfa</a></li>
-                <li><a href="about.html">Hakkımda</a></li>
-                <li><a href="portfolio.html">Portföy</a></li>
-                <li><a href="contact.html">İletişim</a></li>
+                <li><a href="index.html" class="active" data-translate="nav_home">Ana Sayfa</a></li>
+                <li><a href="about.html" data-translate="nav_about">Hakkımda</a></li>
+                <li><a href="portfolio.html" data-translate="nav_portfolio">Portföy</a></li>
+                <li><a href="contact.html" data-translate="nav_contact">İletişim</a></li>
             </ul>
+            <!-- Dil Seçici -->
+            <div class="language-switcher">
+                <button class="language-btn lang-tr active" data-translate="lang_tr">Türkçe</button>
+                <span>|</span>
+                <button class="language-btn lang-en" data-translate="lang_en">English</button>
+            </div>
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -36,9 +42,9 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1>Merhaba, Ben Arif!</h1>
-                    <p>Yazılım Mühendisi</p>
-                    <a href="contact.html" class="btn">İletişime Geç</a>
+                    <h1 data-translate="hero_greeting">Merhaba, Ben Arif!</h1>
+                    <p data-translate="hero_title">Yazılım Mühendisi</p>
+                    <a href="contact.html" class="btn" data-translate="hero_button">İletişime Geç</a>
                 </div>
             </div>
         </section>
@@ -46,37 +52,37 @@
         <!-- Hakkımda Özet Section -->
         <section class="about-summary">
             <div class="container">
-                <h2>Kısaca Ben</h2>
-                <p>Yazılım geliştirme konusunda tutkuluyum. Yenilikçi teknolojileri takip ederek kendimi sürekli geliştirmeye özen gösteriyorum.</p>
-                <a href="about.html" class="btn btn-secondary">Daha Fazla Bilgi</a>
+                <h2 data-translate="about_title">Kısaca Ben</h2>
+                <p data-translate="about_text">Yazılım geliştirme konusunda tutkuluyum. Yenilikçi teknolojileri takip ederek kendimi sürekli geliştirmeye özen gösteriyorum.</p>
+                <a href="about.html" class="btn btn-secondary" data-translate="about_button">Daha Fazla Bilgi</a>
             </div>
         </section>
 
         <!-- Hizmetler Section -->
         <section class="services">
             <div class="container">
-                <h2>Hizmetlerim</h2>
+                <h2 data-translate="services_title">Hizmetlerim</h2>
                 <div class="services-grid">
                     <div class="service-card">
                         <div class="service-icon">
                             <i class="fas fa-code"></i>
                         </div>
-                        <h3>Web Geliştirme</h3>
-                        <p>Modern web teknolojileri kullanarak hızlı ve etkili web siteleri geliştiriyorum.</p>
+                        <h3 data-translate="service_web_title">Web Geliştirme</h3>
+                        <p data-translate="service_web_text">Modern web teknolojileri kullanarak hızlı ve etkili web siteleri geliştiriyorum.</p>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">
                             <i class="fas fa-paint-brush"></i>
                         </div>
-                        <h3>AI</h3>
-                        <p>Yapay zeka teknolojileri kullanarak çözümler geliştiriyorum.</p>
+                        <h3 data-translate="service_ai_title">AI</h3>
+                        <p data-translate="service_ai_text">Yapay zeka teknolojileri kullanarak çözümler geliştiriyorum.</p>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">
                             <i class="fas fa-mobile-alt"></i>
                         </div>
-                        <h3>Algoritma</h3>
-                        <p>Algoritma geliştirme ve optimizasyonu yapıyorum.</p>
+                        <h3 data-translate="service_algo_title">Algoritma</h3>
+                        <p data-translate="service_algo_text">Algoritma geliştirme ve optimizasyonu yapıyorum.</p>
                     </div>
                 </div>
             </div>
@@ -90,7 +96,7 @@
                 <a href="https://linkedin.com/arifozcan35" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/arifozcan35" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
             </div>
-            <p>&copy; 2025 Arif Özcan. Tüm hakları saklıdır.</p>
+            <p>&copy; 2025 Arif Özcan. <span data-translate="footer_rights">Tüm hakları saklıdır.</span></p>
         </div>
     </footer>
 

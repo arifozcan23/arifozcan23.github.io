@@ -18,11 +18,17 @@
                 </a>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="about.html">Hakkımda</a></li>
-                <li><a href="portfolio.html" class="active">Portföy</a></li>
-                <li><a href="contact.html">İletişim</a></li>
+                <li><a href="index.html" data-translate="nav_home">Ana Sayfa</a></li>
+                <li><a href="about.html" data-translate="nav_about">Hakkımda</a></li>
+                <li><a href="portfolio.html" class="active" data-translate="nav_portfolio">Portföy</a></li>
+                <li><a href="contact.html" data-translate="nav_contact">İletişim</a></li>
             </ul>
+            <!-- Dil Seçici -->
+            <div class="language-switcher">
+                <button class="language-btn lang-tr active" data-translate="lang_tr">Türkçe</button>
+                <span>|</span>
+                <button class="language-btn lang-en" data-translate="lang_en">English</button>
+            </div>
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -35,8 +41,8 @@
         <!-- Başlık Section -->
         <section class="page-header">
             <div class="container">
-                <h1>Portföyüm</h1>
-                <p>İşte bazı projelerim ve çalışmalarım</p>
+                <h1 data-translate="portfolio_title">Portföyüm</h1>
+                <p data-translate="portfolio_subtitle">İşte bazı projelerim ve çalışmalarım</p>
             </div>
         </section>
 
@@ -47,8 +53,8 @@
                     <!-- Proje 1 -->
                     <div class="project-card">
                         <div class="project-info">
-                            <h3>Personel Takip Sistemi</h3>
-                            <p>Personel, birimler, kapılar, turnikeler ve çalışma saatlerini yönetmek için tasarlanmış kapsamlı bir arka uç projesi, kolay erişim kontrolü, e-posta bildirimi ve maaş hesaplaması sağlar.</p>
+                            <h3 data-translate="project1_title">Personel Takip Sistemi</h3>
+                            <p data-translate="project1_desc">Personel, birimler, kapılar, turnikeler ve çalışma saatlerini yönetmek için tasarlanmış kapsamlı bir arka uç projesi, kolay erişim kontrolü, e-posta bildirimi ve maaş hesaplaması sağlar.</p>
                             <div class="project-tech">
                                 <span>Java</span>
                                 <span>Spring Boot</span>
@@ -60,7 +66,7 @@
                                 <span>JUnit</span>
                             </div>
                             <div class="project-links">
-                                <a href="https://github.com/arifozcan35/personel-takip-sistemi" class="btn btn-small">Kaynak Kodu</a>
+                                <a href="https://github.com/arifozcan35/personel-takip-sistemi" class="btn btn-small" data-translate="source_code">Kaynak Kodu</a>
                             </div>
                         </div>
                     </div>
@@ -68,8 +74,8 @@
                     <!-- Proje 2 -->
                     <div class="project-card">
                         <div class="project-info">
-                            <h3>Yapay Zeka Destekli Yazı Dağıtım Sistemi</h3>
-                            <p>Gelen resmi belgeleri analiz etmek ve bunları uygun üniversite bölümlerine otomatik olarak yönlendirmek için yapay zeka destekli bir platform oluşturdu. SAYZEK (Savunma Sanayii Yapay Zeka Yetenek Kümesi) tarafından desteklenmektedir.</p>
+                            <h3 data-translate="project2_title">Yapay Zeka Destekli Yazı Dağıtım Sistemi</h3>
+                            <p data-translate="project2_desc">Gelen resmi belgeleri analiz etmek ve bunları uygun üniversite bölümlerine otomatik olarak yönlendirmek için yapay zeka destekli bir platform oluşturdu. SAYZEK (Savunma Sanayii Yapay Zeka Yetenek Kümesi) tarafından desteklenmektedir.</p>
                             <div class="project-tech">
                                 <span>Python</span>
                                 <span>Machine Learning</span>
@@ -83,8 +89,8 @@
                     <!-- Proje 3 -->
                     <div class="project-card">
                         <div class="project-info">
-                            <h3>Yüz Şekline Göre Gözlük Öneri Uygulaması</h3>
-                            <p>Kullanıcının yüz şeklini tanımlayan ve yüz tipine uygun gözlük çerçeveleri öneren bir yapay zeka uygulaması tasarladı.</p>
+                            <h3 data-translate="project3_title">Yüz Şekline Göre Gözlük Öneri Uygulaması</h3>
+                            <p data-translate="project3_desc">Kullanıcının yüz şeklini tanımlayan ve yüz tipine uygun gözlük çerçeveleri öneren bir yapay zeka uygulaması tasarladı.</p>
                             <div class="project-tech">
                                 <span>Python</span>
                                 <span>NumPy</span>
@@ -94,7 +100,7 @@
                                 <span>Jupyter Notebook</span>
                             </div>
                             <div class="project-links">
-                                <a href="https://github.com/arifozcan35/face-shape-glasses-recommendation" class="btn btn-small">Kaynak Kodu</a>
+                                <a href="https://github.com/arifozcan35/face-shape-glasses-recommendation" class="btn btn-small" data-translate="source_code">Kaynak Kodu</a>
                             </div>
                         </div>
                     </div>
@@ -102,8 +108,8 @@
                     <!-- Proje 4 -->
                     <div class="project-card">
                         <div class="project-info">
-                            <h3>Uçuş Takip Uygulaması</h3>
-                            <p>OpenSky Network API'sını kullanarak dünya çapındaki uçuşların mevcut konumlarını harita üzerinde gösterme ve uçuş verilerini grafik yapılarıyla görselleştirme.</p>
+                            <h3 data-translate="project4_title">Uçuş Takip Uygulaması</h3>
+                            <p data-translate="project4_desc">OpenSky Network API'sını kullanarak dünya çapındaki uçuşların mevcut konumlarını harita üzerinde gösterme ve uçuş verilerini grafik yapılarıyla görselleştirme.</p>
                             <div class="project-tech">
                                 <span>Python</span>
                                 <span>Pandas</span>
@@ -111,7 +117,7 @@
                                 <span>Streamlit</span>
                             </div>
                             <div class="project-links">
-                                <a href="https://github.com/arifozcan35/flight-tracking-application" class="btn btn-small">Kaynak Kodu</a>
+                                <a href="https://github.com/arifozcan35/flight-tracking-application" class="btn btn-small" data-translate="source_code">Kaynak Kodu</a>
                             </div>
                         </div>
                     </div>
@@ -122,15 +128,15 @@
         <!-- Özgeçmiş Section -->
         <section class="resume-section">
             <div class="container">
-                <h2 class="section-title">Özgeçmişim</h2>
+                <h2 class="section-title" data-translate="resume_title">Özgeçmişim</h2>
                 <div class="resume-container">
                     <div class="resume-preview">
                         <div class="resume-info">
-                            <h3>Profesyonel CV</h3>
-                            <p>Eğitim geçmişim, iş deneyimim, becerilerim ve projelerim hakkında daha detaylı bilgi edinmek için özgeçmişimi inceleyebilirsiniz.</p>
+                            <h3 data-translate="resume_professional">Profesyonel CV</h3>
+                            <p data-translate="resume_desc">Eğitim geçmişim, iş deneyimim, becerilerim ve projelerim hakkında daha detaylı bilgi edinmek için özgeçmişimi inceleyebilirsiniz.</p>
                             <div class="resume-actions">
                                 <a href="./documents/arif-ozcan-cv.pdf" class="btn btn-primary" target="_blank">
-                                    <i class="fas fa-eye"></i> Görüntüle
+                                    <i class="fas fa-eye"></i> <span data-translate="view">Görüntüle</span>
                                 </a>
                             </div>
                         </div>
@@ -147,7 +153,7 @@
                 <a href="https://linkedin.com/arifozcan35" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/arifozcan35" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
             </div>
-            <p>&copy; 2025 Arif Özcan. Tüm hakları saklıdır.</p>
+            <p>&copy; 2025 Arif Özcan. <span data-translate="footer_rights">Tüm hakları saklıdır.</span></p>
         </div>
     </footer>
 

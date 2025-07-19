@@ -18,11 +18,17 @@
                 </a>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="about.html" class="active">Hakkımda</a></li>
-                <li><a href="portfolio.html">Portföy</a></li>
-                <li><a href="contact.html">İletişim</a></li>
+                <li><a href="index.html" data-translate="nav_home">Ana Sayfa</a></li>
+                <li><a href="about.html" class="active" data-translate="nav_about">Hakkımda</a></li>
+                <li><a href="portfolio.html" data-translate="nav_portfolio">Portföy</a></li>
+                <li><a href="contact.html" data-translate="nav_contact">İletişim</a></li>
             </ul>
+            <!-- Dil Seçici -->
+            <div class="language-switcher">
+                <button class="language-btn lang-tr active" data-translate="lang_tr">Türkçe</button>
+                <span>|</span>
+                <button class="language-btn lang-en" data-translate="lang_en">English</button>
+            </div>
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -35,7 +41,7 @@
         <!-- Başlık Section -->
         <section class="page-header">
             <div class="container">
-                <h1>Hakkımda</h1>
+                <h1 data-translate="about_page_title">Hakkımda</h1>
             </div>
         </section>
 
@@ -43,11 +49,11 @@
         <section class="about-story">
             <div class="container">
                 <div class="about-content">
-                    <h2>Benim Hikayem</h2>
-                    <p>Merhaba! Ben Arif Özcan, yazılım mühendisiyim. Dijital dünyaya olan ilgim küçük yaşlarda başladı ve zamanla bu ilgi tutkuya dönüştü.</p>
-                    <p>Yazılım Mühendisliği eğitimim sırasında web teknolojilerine odaklanmaya karar verdim ve mezuniyetimden bu yana çeşitli projelerde çalışarak kendimi sürekli geliştirdim. Kullanıcı deneyimini ön planda tutan, modern ve işlevsel web çözümleri üretmeyi hedefliyorum.</p>
-                    <p>Teknolojinin sürekli değiştiği bu dünyada, kendimi güncel tutmak için düzenli olarak yeni teknolojileri öğreniyor ve bunları projelerime entegre ediyorum. Her projede, kullanıcıların ihtiyaçlarını karşılayan, estetik ve kullanıcı dostu çözümler sunmayı amaçlıyorum.</p>
-                    <p>Yazılım geliştirme konusunda kendimi sürekli geliştirmeye çalışıyorum. Yeni teknolojileri takip ederek kendimi sürekli geliştirmeye özen gösteriyorum.</p>
+                    <h2 data-translate="about_story_title">Benim Hikayem</h2>
+                    <p data-translate="about_story_p1">Merhaba! Ben Arif Özcan, yazılım mühendisiyim. Dijital dünyaya olan ilgim küçük yaşlarda başladı ve zamanla bu ilgi tutkuya dönüştü.</p>
+                    <p data-translate="about_story_p2">Yazılım Mühendisliği eğitimim sırasında web teknolojilerine odaklanmaya karar verdim ve mezuniyetimden bu yana çeşitli projelerde çalışarak kendimi sürekli geliştirdim. Kullanıcı deneyimini ön planda tutan, modern ve işlevsel web çözümleri üretmeyi hedefliyorum.</p>
+                    <p data-translate="about_story_p3">Teknolojinin sürekli değiştiği bu dünyada, kendimi güncel tutmak için düzenli olarak yeni teknolojileri öğreniyor ve bunları projelerime entegre ediyorum. Her projede, kullanıcıların ihtiyaçlarını karşılayan, estetik ve kullanıcı dostu çözümler sunmayı amaçlıyorum.</p>
+                    <p data-translate="about_story_p4">Yazılım geliştirme konusunda kendimi sürekli geliştirmeye çalışıyorum. Yeni teknolojileri takip ederek kendimi sürekli geliştirmeye özen gösteriyorum.</p>
                 </div>
                 <div class="about-image">
                     <img src="./images/profile.jpg" alt="Arif Özcan">
@@ -58,7 +64,7 @@
         <!-- Eğitim Section -->
         <section class="education">
             <div class="container">
-                <h2>Eğitim</h2>
+                <h2 data-translate="education_title">Eğitim</h2>
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-date">
@@ -94,7 +100,7 @@
         <!-- Deneyim Section -->
         <section class="experience">
             <div class="container">
-                <h2>Deneyim</h2>
+                <h2 data-translate="experience_title">Deneyim</h2>
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-date">
@@ -123,10 +129,10 @@
         <!-- Yetenekler Section -->
         <section class="skills">
             <div class="container">
-                <h2>Yeteneklerim</h2>
+                <h2 data-translate="skills_title">Yeteneklerim</h2>
                 <div class="skills-grid">
                     <div class="skill-category">
-                        <h3>Programlama Dilleri</h3>
+                        <h3 data-translate="skills_programming">Programlama Dilleri</h3>
                         <ul>
                             <li>Java</li>
                             <li>Python</li>
@@ -134,13 +140,13 @@
                         </ul>
                     </div>
                     <div class="skill-category">
-                        <h3>Çerçeveler & Kütüphaneler</h3>
+                        <h3 data-translate="skills_frameworks">Çerçeveler & Kütüphaneler</h3>
                         <ul>
                             <li>Spring Boot</li>
                         </ul>
                     </div>
                     <div class="skill-category">
-                        <h3>Araçlar & Platformlar</h3>
+                        <h3 data-translate="skills_tools">Araçlar & Platformlar</h3>
                         <ul>
                             <li>Git</li>
                             <li>Docker</li>
@@ -156,7 +162,7 @@
         <!-- Etkilendiğim Sözler Section -->
         <section class="testimonials">
             <div class="container">
-                <h2>Etkilendiğim Sözler</h2>
+                <h2 data-translate="testimonials_title">Etkilendiğim Sözler</h2>
                 <div class="testimonials-slider">
                     <div class="testimonial-item">
                         <div class="testimonial-content">
@@ -188,7 +194,7 @@
                 <a href="https://linkedin.com/arifozcan35" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/arifozcan35" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>  
             </div>
-            <p>&copy; 2025 Arif Özcan. Tüm hakları saklıdır.</p>
+            <p>&copy; 2025 Arif Özcan. <span data-translate="footer_rights">Tüm hakları saklıdır.</span></p>
         </div>
     </footer>
 
