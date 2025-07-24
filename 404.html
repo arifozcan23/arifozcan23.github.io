@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="404 - Sayfa Bulunamadı - Arif Özcan kişisel web sitesi">
+    <meta name="robots" content="noindex, follow">
+    
+    <title>404 - Sayfa Bulunamadı | Arif Özcan</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .error-container {
+            text-align: center;
+            padding: 8rem 2rem;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .error-code {
+            font-size: 8rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+        
+        .error-message {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .error-details {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigasyon Menüsü -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html" title="Arif Özcan - Ana Sayfa">
+                    <img src="./images/profile2.jpg" alt="Arif Özcan - Yazılım Mühendisi" class="logo-img">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" data-translate="nav_home" title="Ana Sayfa - Arif Özcan">Ana Sayfa</a></li>
+                <li><a href="about.html" data-translate="nav_about" title="Hakkımda - Arif Özcan">Hakkımda</a></li>
+                <li><a href="portfolio.html" data-translate="nav_portfolio" title="Portföy - Arif Özcan">Portföy</a></li>
+                <li><a href="contact.html" data-translate="nav_contact" title="İletişim - Arif Özcan">İletişim</a></li>
+            </ul>
+            <!-- Dil Seçici -->
+            <div class="language-switcher">
+                <button class="language-btn lang-tr active" data-translate="lang_tr">Türkçe</button>
+                <span>|</span>
+                <button class="language-btn lang-en" data-translate="lang_en">English</button>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="error-container">
+            <div class="container">
+                <div class="error-code">404</div>
+                <h1 class="error-message">Sayfa Bulunamadı</h1>
+                <p class="error-details">Aradığınız sayfa taşınmış, kaldırılmış veya geçici olarak ulaşılamıyor olabilir. Ana sayfaya dönmek için aşağıdaki butona tıklayabilirsiniz.</p>
+                <a href="index.html" class="btn">Ana Sayfaya Dön</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://linkedin.com/in/arifozcan35" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/arifozcan23" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://instagram.com/0zcanarif" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2025 Arif Özcan. <span data-translate="footer_rights">Tüm hakları saklıdır.</span></p>
+        </div>
+    </footer>
+
+    <script src="./js/script.js" defer></script>
+</body>
+</html> 

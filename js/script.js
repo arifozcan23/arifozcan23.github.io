@@ -80,6 +80,7 @@ const translations = {
         'resume_professional': 'Profesyonel CV',
         'resume_desc': 'Eğitim geçmişim, iş deneyimim, becerilerim ve projelerim hakkında daha detaylı bilgi edinmek için özgeçmişimi inceleyebilirsiniz.',
         'view': 'Görüntüle',
+        'cv_file': './documents/arif-ozcan-cv.pdf', // CV dosya yolu
         // İletişim sayfası
         'contact_subtitle': 'Benimle iletişime geçin',
         'contact_info_title': 'İletişim Bilgilerim',
@@ -166,6 +167,7 @@ const translations = {
         'resume_professional': 'Professional CV',
         'resume_desc': 'You can review my resume to learn more detailed information about my educational background, work experience, skills, and projects.',
         'view': 'View',
+        'cv_file': './documents/arif-ozcan-resume.pdf', // CV dosya yolu
         // Contact page
         'contact_subtitle': 'Get in touch with me',
         'contact_info_title': 'Contact Me',
@@ -196,7 +198,20 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Dil ayarlarını başlat
     initLanguageSettings();
+    
+    // CV link güncellemesini başlat
+    updateCVLink();
 });
+
+/**
+ * CV dosya yolunu mevcut dile göre güncelleyen fonksiyon
+ */
+function updateCVLink() {
+    const cvLink = document.getElementById('cv-link');
+    if (cvLink) {
+        cvLink.href = translations[currentLanguage]['cv_file'];
+    }
+}
 
 /**
  * Dil ayarlarını başlatan fonksiyon
@@ -246,8 +261,14 @@ function changeLanguage(language) {
     // HTML lang özniteliğini güncelle
     document.documentElement.lang = language;
     
+    // Hreflang etiketlerini güncelle
+    updateHrefLangTags(language);
+    
     // Sayfadaki metinleri güncelle
     updatePageLanguage();
+    
+    // CV link dosya yolunu güncelle
+    updateCVLink();
     
     // Dil değiştirme butonlarını güncelle
     const languageSwitcher = document.querySelector('.language-switcher');
@@ -264,6 +285,27 @@ function changeLanguage(language) {
                 trButton.classList.remove('active');
             }
         }
+    }
+}
+
+/**
+ * Hreflang etiketlerini günceller
+ * @param {string} language - Aktif dil
+ */
+function updateHrefLangTags(language) {
+    const alternateLinks = document.querySelectorAll('link[rel="alternate"][hreflang]');
+    if (alternateLinks.length > 0) {
+        // Mevcut sayfanın URL'sini al
+        const currentURL = window.location.href;
+        const baseURL = currentURL.split('/').slice(0, -1).join('/') || currentURL;
+        
+        alternateLinks.forEach(link => {
+            if (link.hreflang === language) {
+                link.setAttribute('rel', 'alternate canonical');
+            } else {
+                link.setAttribute('rel', 'alternate');
+            }
+        });
     }
 }
 
@@ -433,23 +475,131 @@ function validateEmail(email) {
  * Sayfa animasyonlarını başlatan fonksiyon
  */
 function initAnimations() {
+    // Hero bölümü için özel animasyonlar ve animasyonlu öğeler oluştur
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) {
+        // Parçacıklar için container ekle
+        const particlesContainer = document.createElement('div');
+        particlesContainer.className = 'particles';
+        
+        // 5 adet parçacık ekle
+        for (let i = 0; i < 5; i++) {
+            const particle = document.createElement('span');
+            particle.className = 'particle';
+            particlesContainer.appendChild(particle);
+        }
+        
+        heroSection.appendChild(particlesContainer);
+    }
+    
+    const heroContent = document.querySelector('.hero-content');
+    
+    if (heroContent) {
+        const heroTitle = heroContent.querySelector('h1');
+        const heroSubtitle = heroContent.querySelector('p');
+        const heroButton = heroContent.querySelector('.btn');
+        
+        if (heroTitle) heroTitle.classList.add('slide-left', 'delay-1');
+        if (heroSubtitle) heroSubtitle.classList.add('slide-left', 'delay-2');
+        if (heroButton) {
+            heroButton.classList.add('slide-left', 'delay-3');
+            heroButton.classList.add('float');
+        }
+    }
+    
+    // Servis kartlarına dalga efekti ekle
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach(card => {
+        const wave = document.createElement('div');
+        wave.className = 'wave';
+        card.appendChild(wave);
+    });
+    
+    // Proje kartlarına parıltı ve arka plan animasyon efekti ekle
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        const shimmer = document.createElement('div');
+        shimmer.className = 'shimmer';
+        
+        const bgAnimation = document.createElement('div');
+        bgAnimation.className = 'bg-animation';
+        
+        card.appendChild(shimmer);
+        card.appendChild(bgAnimation);
+    });
+    
+    // Skill kartlarına hareketli noktalar ve dalga efektleri ekle
+    const skillCategories = document.querySelectorAll('.skill-category');
+    skillCategories.forEach(skill => {
+        // Noktalar için container
+        const dots = document.createElement('div');
+        dots.className = 'dots';
+        
+        // 4 adet nokta ekle
+        for (let i = 0; i < 4; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            dots.appendChild(dot);
+        }
+        
+        // Dalga gradyan efekti
+        const waveGradient = document.createElement('div');
+        waveGradient.className = 'wave-gradient';
+        
+        skill.appendChild(dots);
+        skill.appendChild(waveGradient);
+    });
+    
+    // Testimonial kartlarına ışıma ve desen efektleri ekle
+    const testimonialItems = document.querySelectorAll('.testimonial-item');
+    testimonialItems.forEach(item => {
+        const glow = document.createElement('div');
+        glow.className = 'glow';
+        
+        const glowBottom = document.createElement('div');
+        glowBottom.className = 'glow-bottom';
+        
+        const pattern = document.createElement('div');
+        pattern.className = 'pattern';
+        
+        item.appendChild(glow);
+        item.appendChild(glowBottom);
+        item.appendChild(pattern);
+    });
+    
+    // Nav linklerine arka plan animasyonu ekle
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        const navBg = document.createElement('div');
+        navBg.className = 'nav-bg';
+        link.appendChild(navBg);
+    });
+    
     // Sayfa scroll olduğunda elemanların görünümünü kontrol et
     const fadeElements = document.querySelectorAll('.service-card, .project-card, .skill-category, .testimonial-item');
     
     if (fadeElements.length > 0) {
         // Başlangıçta elementleri gizle
         fadeElements.forEach((element, index) => {
-            element.classList.add('fade-up');
-            element.style.opacity = '0';
-            
-            // Elementlere farklı gecikmeler ekle
+            // Farklı animasyonlar uygula
             if (index % 3 === 0) {
+                element.classList.add('fade-up');
                 element.classList.add('delay-1');
             } else if (index % 3 === 1) {
+                element.classList.add('slide-left');
                 element.classList.add('delay-2');
             } else {
+                element.classList.add('slide-right');
                 element.classList.add('delay-3');
             }
+            
+            element.style.opacity = '0';
+        });
+        
+        // İletişim butonlarına float animasyonu ekle
+        const contactButtons = document.querySelectorAll('.contact-form .btn, .email-btn, .hero-content .btn');
+        contactButtons.forEach(button => {
+            button.classList.add('float');
         });
         
         // Scroll olayını dinle ve elementleri göster
@@ -457,6 +607,12 @@ function initAnimations() {
         
         // Sayfa yüklendiğinde de kontrol et
         checkFadeElements();
+    }
+    
+    // Logoya pulse animasyonu ekle
+    const logoImage = document.querySelector('.logo-img');
+    if (logoImage) {
+        logoImage.classList.add('pulse');
     }
 }
 

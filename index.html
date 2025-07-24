@@ -3,6 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Arif Özcan - Yazılım Mühendisi ve Web Geliştirici. Java, Python ve AI teknolojileri konularında uzmanlaşmış profesyonel.">
+    
+    <!-- Google Search Console Doğrulama -->
+    <meta name="google-site-verification" content="ekleyeceğiniz-doğrulama-kodu" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://arifozcan.tr/">
+    
+    <!-- Hreflang Etiketleri -->
+    <link rel="alternate" hreflang="tr" href="https://arifozcan.tr/">
+    <link rel="alternate" hreflang="en" href="https://arifozcan.tr/">
+    <link rel="alternate" hreflang="x-default" href="https://arifozcan.tr/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./images/favicon.png">
+    <link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arifozcan.tr/">
+    <meta property="og:title" content="Arif Özcan | Yazılım Mühendisi">
+    <meta property="og:description" content="Arif Özcan - Yazılım Mühendisi ve Web Geliştirici. Java, Python ve AI teknolojileri konularında uzmanlaşmış profesyonel.">
+    <meta property="og:image" content="https://arifozcan.tr/images/profile2.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://arifozcan.tr/">
+    <meta property="twitter:title" content="Arif Özcan | Yazılım Mühendisi">
+    <meta property="twitter:description" content="Arif Özcan - Yazılım Mühendisi ve Web Geliştirici. Java, Python ve AI teknolojileri konularında uzmanlaşmış profesyonel.">
+    <meta property="twitter:image" content="https://arifozcan.tr/images/profile2.jpg">
+    
     <title>Arif Özcan | Ana Sayfa</title>
     <link rel="stylesheet" href="./css/style.css">
     <!-- Font Awesome CDN -->
@@ -13,15 +44,15 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <a href="index.html">
-                    <img src="./images/profile2.jpg" alt="Arif Özcan Logo" class="logo-img">
+                <a href="index.html" title="Arif Özcan - Ana Sayfa">
+                    <img src="./images/profile2.jpg" alt="Arif Özcan - Yazılım Mühendisi" class="logo-img">
                 </a>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html" class="active" data-translate="nav_home">Ana Sayfa</a></li>
-                <li><a href="about.html" data-translate="nav_about">Hakkımda</a></li>
-                <li><a href="portfolio.html" data-translate="nav_portfolio">Portföy</a></li>
-                <li><a href="contact.html" data-translate="nav_contact">İletişim</a></li>
+                <li><a href="index.html" class="active" data-translate="nav_home" title="Ana Sayfa - Arif Özcan">Ana Sayfa</a></li>
+                <li><a href="about.html" data-translate="nav_about" title="Hakkımda - Arif Özcan">Hakkımda</a></li>
+                <li><a href="portfolio.html" data-translate="nav_portfolio" title="Portföy - Arif Özcan">Portföy</a></li>
+                <li><a href="contact.html" data-translate="nav_contact" title="İletişim - Arif Özcan">İletişim</a></li>
             </ul>
             <!-- Dil Seçici -->
             <div class="language-switcher">
@@ -39,11 +70,11 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero" id="home">
             <div class="container">
                 <div class="hero-content">
-                    <h1 data-translate="hero_greeting">Merhaba, Ben Arif!</h1>
-                    <p data-translate="hero_title">Yazılım Mühendisi</p>
+                    <h1 data-translate="hero_greeting">Merhaba, Ben <span class="highlight">Arif Özcan</span>!</h1>
+                    <p data-translate="hero_title" class="profession">Yazılım Mühendisi | Java Geliştirici | Web Tasarımcı</p>
                     <a href="contact.html" class="btn" data-translate="hero_button">İletişime Geç</a>
                 </div>
             </div>
@@ -100,6 +131,32 @@
         </div>
     </footer>
 
-    <script src="./js/script.js"></script>
+    <script src="./js/script.js" defer></script>
+    
+    <!-- Schema.org - Kişi bilgileri için JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Arif Özcan",
+      "url": "https://arifozcan.tr",
+      "image": "https://arifozcan.tr/images/profile2.jpg",
+      "sameAs": [
+        "https://linkedin.com/in/arifozcan35",
+        "https://github.com/arifozcan23",
+        "https://instagram.com/0zcanarif"
+      ],
+      "jobTitle": "Yazılım Mühendisi",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "GİB Teknoloji"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Fırat Üniversitesi"
+      },
+      "knowsAbout": ["Java", "Spring Boot", "Python", "Web Geliştirme", "AI"]
+    }
+    </script>
 </body>
 </html> 

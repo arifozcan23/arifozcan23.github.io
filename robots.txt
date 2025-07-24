@@ -1,0 +1,6 @@
+# Tüm arama motoru robotlarına izin ver
+User-agent: *
+Allow: /
+
+# Sitemap konumu
+Sitemap: https://arifozcan.tr/sitemap.xml 

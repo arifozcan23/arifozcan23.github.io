@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://arifozcan.tr/</loc>
+    <lastmod>2023-08-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://arifozcan.tr/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://arifozcan.tr/" />
+  </url>
+  <url>
+    <loc>https://arifozcan.tr/about.html</loc>
+    <lastmod>2023-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://arifozcan.tr/about.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://arifozcan.tr/about.html" />
+  </url>
+  <url>
+    <loc>https://arifozcan.tr/portfolio.html</loc>
+    <lastmod>2023-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://arifozcan.tr/portfolio.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://arifozcan.tr/portfolio.html" />
+  </url>
+  <url>
+    <loc>https://arifozcan.tr/contact.html</loc>
+    <lastmod>2023-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://arifozcan.tr/contact.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://arifozcan.tr/contact.html" />
+  </url>
+</urlset> 
