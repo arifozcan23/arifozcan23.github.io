@@ -101,13 +101,13 @@
                         <div class="social-links-contact">
                             <h3 data-translate="contact_social">Sosyal Medya</h3>
                             <div class="social-icons">
-                                <a href="https://linkedin.com/in/arifozcan35" target="_blank" aria-label="LinkedIn">
+                                <a href="https://www.linkedin.com/in/arifozcan35" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
-                                <a href="https://github.com/arifozcan35" target="_blank" aria-label="GitHub">
+                                <a href="https://github.com/arifozcan35" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="https://instagram.com/0zcanarif" target="_blank" aria-label="Instagram">
+                                <a href="https://instagram.com/0zcanarif" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                                     <i class="fab fa-instagram"></i>
                                 </a>
                             </div>
@@ -118,7 +118,7 @@
                     <div class="contact-email-container">
                         <h2 data-translate="contact_send_message">Mesaj Gönder</h2>
                         <p data-translate="contact_email_info">Bana doğrudan e-posta göndermek için aşağıdaki butona tıklayın:</p>
-                        <a href="mailto:zcanarif@gmail.com" class="email-btn">
+                        <a href="mailto:zcanarif@gmail.com" class="email-btn" rel="nofollow">
                             <i class="fas fa-envelope"></i> <span data-translate="contact_send_email">E-posta Gönder</span>
                         </a>
                         <div class="email-info">
@@ -136,14 +136,36 @@
     <footer>
         <div class="container">
             <div class="social-links">
-                <a href="https://linkedin.com/in/arifozcan35" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/arifozcan35" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://instagram.com/0zcanarif" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/arifozcan35" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/arifozcan35" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://instagram.com/0zcanarif" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
             <p>&copy; 2025 Arif Özcan. <span data-translate="footer_rights">Tüm hakları saklıdır.</span></p>
         </div>
     </footer>
 
     <script src="./js/script.js"></script>
+    
+    <!-- BreadcrumbList için JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Ana Sayfa",
+          "item": "https://arifozcan.tr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "İletişim",
+          "item": "https://arifozcan.tr/contact.html"
+        }
+      ]
+    }
+    </script>
 </body>
 </html>
