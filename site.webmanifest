@@ -1,0 +1,21 @@
+{
+  "name": "Arif Özcan",
+  "short_name": "arifozcan.tr",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a2c38",
+  "theme_color": "#1a2c38",
+  "icons": [
+    {
+      "src": "/images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/images/profile2.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}

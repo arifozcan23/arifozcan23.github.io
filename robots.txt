@@ -4,3 +4,5 @@ Allow: /
 
 # Sitemap konumu
 Sitemap: https://arifozcan.tr/sitemap.xml 
+
+# Site genel renk ve PWA manifesti eklendi.
