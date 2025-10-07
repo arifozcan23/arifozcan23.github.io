@@ -46,7 +46,7 @@ const translations = {
         'education_prep': 'İngilizce Hazırlık (İngilizce B2 - Upper Intermediate)',
         'education_prep_school': 'FÜ Yabancı Diller Yüksekokulu',
         'experience_title': 'Deneyim',
-        'experience_javadev': 'Java BackendDeveloper - Part time',
+        'experience_javadev': 'Java Backend Developer - Part time',
         'experience_company3': 'Craft Technology',
         'experience_desc6': '• Mobil uygulama geliştirme sürecinde, backend geliştirici olarak aktif rol üstlendim.',
         'experience_desc7': '• Spring Boot ile uygulamanın RESTful API servislerinin yazılmasında çalıştım. ',
@@ -154,7 +154,7 @@ const translations = {
         'education_prep': 'English Preparatory (English B2 - Upper Intermediate)',
         'education_prep_school': 'FU School of Foreign Languages',
         'experience_title': 'Experience',
-        'experience_javadev': 'Java BackendDeveloper - Part time',
+        'experience_javadev': 'Java Backend Developer - Part time',
         'experience_company3': 'Craft Technology',
         'experience_desc6': '• I took an active role as a backend developer in the mobile application development process.',
         'experience_desc7': '• I contributed to creating the necessary APIs with Spring Boot.',
@@ -227,8 +227,14 @@ const translations = {
 // Mevcut dil (varsayılan olarak Türkçe)
 let currentLanguage = localStorage.getItem('language') || 'tr';
 
+// Mevcut tema (varsayılan olarak karanlık mod)
+let currentTheme = localStorage.getItem('theme') || 'dark';
+
 // DOM elementlerinin yüklenmesini bekliyoruz
 document.addEventListener('DOMContentLoaded', function() {
+    // Tema ayarlarını başlat
+    initTheme();
+    
     // Mobil menü fonksiyonlarını başlat
     initMobileMenu();
     
@@ -244,6 +250,54 @@ document.addEventListener('DOMContentLoaded', function() {
     // CV link güncellemesini başlat
     updateCVLink();
 });
+
+/**
+ * Tema ayarlarını başlatan fonksiyon
+ */
+function initTheme() {
+    // Temayı uygula
+    if (currentTheme === 'light') {
+        document.body.setAttribute('data-theme', 'light');
+    } else {
+        document.body.removeAttribute('data-theme');
+    }
+    
+    // Tema toggle butonunu güncelle
+    updateThemeToggleIcon();
+}
+
+/**
+ * Temayı değiştiren fonksiyon
+ */
+function toggleTheme() {
+    if (currentTheme === 'dark') {
+        currentTheme = 'light';
+        document.body.setAttribute('data-theme', 'light');
+    } else {
+        currentTheme = 'dark';
+        document.body.removeAttribute('data-theme');
+    }
+    
+    // Tema tercihini localStorage'a kaydet
+    localStorage.setItem('theme', currentTheme);
+    
+    // Ikonu güncelle
+    updateThemeToggleIcon();
+}
+
+/**
+ * Tema toggle butonunun ikonunu güncelleyen fonksiyon
+ */
+function updateThemeToggleIcon() {
+    const themeIcon = document.querySelector('.theme-toggle-slider i');
+    if (themeIcon) {
+        if (currentTheme === 'dark') {
+            themeIcon.className = 'fas fa-moon';
+        } else {
+            themeIcon.className = 'fas fa-sun';
+        }
+    }
+}
 
 /**
  * CV dosya yolunu mevcut dile göre güncelleyen fonksiyon
