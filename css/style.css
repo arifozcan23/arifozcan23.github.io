@@ -206,7 +206,7 @@ ul {
     display: flex;
     align-items: center;
     margin-left: 0;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
     padding-right: 0;
 }
 
@@ -239,6 +239,16 @@ ul {
     background-color: var(--secondary-color);
 }
 
+@media (max-width: 768px) {
+    .language-switcher {
+        position: absolute;
+        top: 20px;
+        right: 150px;
+        z-index: 1001;
+        margin-right: 0;
+        padding-right: 0;
+    }
+}
 
 /* ======================================
    HEADER VE NAVİGASYON
@@ -261,7 +271,7 @@ header {
     align-items: center;
     padding: 1rem 0;
     position: relative;
-    gap: 3rem;
+    gap: 1rem;
 }
 
 .navbar.scrolled .navbar-container {
@@ -318,7 +328,7 @@ header {
     display: flex;
     align-items: center;
     margin-right: auto;
-    margin-left: 0;
+    margin-left: 3rem;
 }
 
 .nav-links li {
@@ -1817,12 +1827,10 @@ footer p {
 @media (max-width: 768px) {
     .hamburger {
         display: block;
-        margin-right: 1rem;
     }
     
     .navbar-container {
         flex-wrap: wrap;
-        gap: 1rem;
     }
     
     .nav-links {
@@ -2044,7 +2052,7 @@ footer p {
     border: none;
     outline: none;
     margin-left: 0;
-    margin-right: 3rem;
+    margin-right: 0;
 }
 
 .theme-toggle:hover {
@@ -2080,17 +2088,8 @@ body[data-theme="light"] .theme-toggle-slider {
     .theme-toggle {
         position: absolute;
         top: 20px;
-        right: 10px;
-        z-index: 1001;
-        margin-right: 0;
-    }
-    
-    .language-switcher {
-        position: absolute;
-        top: 20px;
         right: 80px;
         z-index: 1001;
         margin-right: 0;
-        padding-right: 0;
     }
 } 
