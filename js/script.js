@@ -451,6 +451,13 @@ function initMobileMenu() {
             
             // Mobil menüyü aç/kapat
             navLinks.classList.toggle('active');
+            
+            // Menü açıkken body scroll'unu engelle
+            if (navLinks.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         });
         
         // Menü linklerine tıklandığında menüyü kapat
@@ -461,6 +468,7 @@ function initMobileMenu() {
                 if (navLinks.classList.contains('active')) {
                     hamburger.classList.remove('active');
                     navLinks.classList.remove('active');
+                    document.body.style.overflow = '';
                 }
             });
         });

@@ -242,11 +242,23 @@ ul {
 @media (max-width: 768px) {
     .language-switcher {
         position: absolute;
-        top: 20px;
-        right: 150px;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 130px;
         z-index: 1001;
-        margin-right: 0;
-        padding-right: 0;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .language-btn {
+        font-size: 0.8rem;
+        padding: 3px;
+        margin: 0 3px;
+    }
+    
+    .language-switcher span {
+        font-size: 0.8rem;
+        margin: 0 2px;
     }
 }
 
@@ -260,6 +272,9 @@ header {
     top: 0;
     z-index: 1000;
     transition: background-color 0.3s ease;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
 }
 
 .navbar {
@@ -272,6 +287,7 @@ header {
     padding: 1rem 0;
     position: relative;
     gap: 1rem;
+    min-height: 70px;
 }
 
 .navbar.scrolled .navbar-container {
@@ -448,7 +464,21 @@ header {
 .hamburger {
     display: none;
     cursor: pointer;
-    margin-right: 0;
+    margin: 0;
+    padding: 5px;
+    z-index: 1002;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 .bar {
@@ -1822,21 +1852,49 @@ footer p {
     .timeline-content::before {
         display: none;
     }
+    
+    /* Navbar için tablet düzenlemesi */
+    .nav-links {
+        margin-left: auto;
+        gap: 0.3rem;
+    }
+    
+    .nav-links li {
+        margin: 0 0.2rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.9rem;
+        margin: 0 0.1rem;
+    }
 }
 
 @media (max-width: 768px) {
     .hamburger {
         display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 15px;
+        z-index: 1001;
+        margin: 0;
     }
     
     .navbar-container {
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        position: relative;
+        padding: 1rem 0;
+        justify-content: flex-start;
+    }
+    
+    .logo {
+        margin-right: auto;
     }
     
     .nav-links {
         position: fixed;
         left: -100%;
-        top: 5rem;
+        top: 70px;
         flex-direction: column;
         background-color: var(--header-bg);
         width: 100%;
@@ -1844,7 +1902,8 @@ footer p {
         transition: 0.3s;
         box-shadow: 0 10px 27px var(--shadow-color);
         z-index: 100;
-        margin-left: 0;
+        margin: 0;
+        padding: 1rem 0;
     }
     
     .nav-links.active {
@@ -1886,6 +1945,51 @@ footer p {
     
     .resume-actions .btn {
         width: 100%;
+    }
+}
+
+/* Çok küçük ekranlar için ek düzenlemeler */
+@media (max-width: 480px) {
+    .navbar-container {
+        padding: 0.8rem 0;
+    }
+    
+    .logo-img {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .language-switcher {
+        right: 115px;
+        scale: 0.9;
+    }
+    
+    .theme-toggle {
+        right: 58px;
+        width: 45px;
+        height: 24px;
+    }
+    
+    .theme-toggle-slider {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .theme-toggle-slider i {
+        font-size: 11px;
+    }
+    
+    body[data-theme="light"] .theme-toggle-slider {
+        transform: translateX(21px);
+    }
+    
+    .hamburger {
+        right: 10px;
+    }
+    
+    .bar {
+        width: 22px;
+        height: 2.5px;
     }
 }
 
@@ -2087,9 +2191,27 @@ body[data-theme="light"] .theme-toggle-slider {
 @media (max-width: 768px) {
     .theme-toggle {
         position: absolute;
-        top: 20px;
-        right: 80px;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 65px;
         z-index: 1001;
-        margin-right: 0;
+        margin: 0;
+        width: 50px;
+        height: 26px;
+    }
+    
+    .theme-toggle-slider {
+        width: 20px;
+        height: 20px;
+        top: 3px;
+        left: 3px;
+    }
+    
+    .theme-toggle-slider i {
+        font-size: 12px;
+    }
+    
+    body[data-theme="light"] .theme-toggle-slider {
+        transform: translateX(24px);
     }
 } 
