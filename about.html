@@ -39,6 +39,14 @@
     <meta name="twitter:site" content="@arifozcan">
     
     <title>Arif Özcan | Hakkımda</title>
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme');
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
     <link rel="stylesheet" href="./css/style.css">
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -50,7 +58,7 @@
             <div class="container navbar-container">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="./images/profile2.jpg" alt="Arif Özcan Logo" class="logo-img">
+                        <img src="./images/profile2.jpg" alt="Arif Özcan Logo" class="logo-img" width="64" height="64" loading="eager">
                     </a>
                 </div>
                 <ul class="nav-links">
@@ -99,7 +107,7 @@
                     <p data-translate="about_story_p4">Yazılım geliştirme konusunda kendimi sürekli geliştirmeye çalışıyorum. Yeni teknolojileri takip ederek kendimi sürekli geliştirmeye özen gösteriyorum.</p>
                 </div>
                 <div class="about-image">
-                    <img src="./images/profile.jpg" alt="Arif Özcan" width="600" height="600" loading="lazy">
+                    <img src="./images/profile.jpg" alt="Arif Özcan" width="600" height="600" loading="eager" fetchpriority="high">
                 </div>
             </div>
         </section>
@@ -307,7 +315,7 @@
                 <a href="https://www.linkedin.com/in/arifozcan35" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/arifozcan35" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>  
             </div>
-            <p>&copy; 2025 Arif Özcan. <span data-translate="footer_rights">Tüm hakları saklıdır.</span></p>
+            <p>&copy; 2026 Arif Özcan. <span data-translate="footer_rights">Tüm hakları saklıdır.</span></p>
         </div>
     </footer>
 

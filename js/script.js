@@ -255,10 +255,12 @@ document.addEventListener('DOMContentLoaded', function() {
  * Tema ayarlarını başlatan fonksiyon
  */
 function initTheme() {
-    // Temayı uygula
+    // Temayı uygula (html'e zaten head script'inde eklendi, body'ye de ekleyelim)
     if (currentTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
         document.body.setAttribute('data-theme', 'light');
     } else {
+        document.documentElement.removeAttribute('data-theme');
         document.body.removeAttribute('data-theme');
     }
     
@@ -272,9 +274,11 @@ function initTheme() {
 function toggleTheme() {
     if (currentTheme === 'dark') {
         currentTheme = 'light';
+        document.documentElement.setAttribute('data-theme', 'light');
         document.body.setAttribute('data-theme', 'light');
     } else {
         currentTheme = 'dark';
+        document.documentElement.removeAttribute('data-theme');
         document.body.removeAttribute('data-theme');
     }
     

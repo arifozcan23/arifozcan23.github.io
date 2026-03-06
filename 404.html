@@ -16,6 +16,14 @@
     <meta name="msapplication-TileColor" content="#1a2c38">
     
     <title>404 - Sayfa Bulunamadı | Arif Özcan</title>
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme');
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
     <link rel="stylesheet" href="./css/style.css">
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -54,27 +62,33 @@
     <!-- Navigasyon Menüsü -->
     <header>
         <nav class="navbar">
-            <div class="logo">
-                <a href="index.html" title="Arif Özcan - Ana Sayfa">
-                    <img src="./images/profile2.jpg" alt="Arif Özcan - Yazılım Mühendisi" class="logo-img">
-                </a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html" data-translate="nav_home" title="Ana Sayfa - Arif Özcan">Ana Sayfa</a></li>
-                <li><a href="about.html" data-translate="nav_about" title="Hakkımda - Arif Özcan">Hakkımda</a></li>
-                <li><a href="portfolio.html" data-translate="nav_portfolio" title="Portföy - Arif Özcan">Portföy</a></li>
-                <li><a href="contact.html" data-translate="nav_contact" title="İletişim - Arif Özcan">İletişim</a></li>
-            </ul>
-            <!-- Dil Seçici -->
-            <div class="language-switcher">
-                <button class="language-btn lang-tr active" data-translate="lang_tr">Türkçe</button>
-                <span>|</span>
-                <button class="language-btn lang-en" data-translate="lang_en">English</button>
-            </div>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="container navbar-container">
+                <div class="logo">
+                    <a href="index.html" title="Arif Özcan - Ana Sayfa">
+                        <img src="./images/profile2.jpg" alt="Arif Özcan - Yazılım Mühendisi" class="logo-img" width="64" height="64" loading="eager">
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" data-translate="nav_home" title="Ana Sayfa - Arif Özcan">Ana Sayfa</a></li>
+                    <li><a href="about.html" data-translate="nav_about" title="Hakkımda - Arif Özcan">Hakkımda</a></li>
+                    <li><a href="portfolio.html" data-translate="nav_portfolio" title="Portföy - Arif Özcan">Portföy</a></li>
+                    <li><a href="contact.html" data-translate="nav_contact" title="İletişim - Arif Özcan">İletişim</a></li>
+                </ul>
+                <div class="language-switcher">
+                    <button class="language-btn lang-tr active" data-translate="lang_tr">Türkçe</button>
+                    <span>|</span>
+                    <button class="language-btn lang-en" data-translate="lang_en">English</button>
+                </div>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Tema Değiştir">
+                    <div class="theme-toggle-slider">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                </button>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
         </nav>
     </header>
@@ -98,7 +112,7 @@
                 <a href="https://github.com/arifozcan35" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 <a href="https://instagram.com/0zcanarif" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
-            <p>&copy; 2025 Arif Özcan. <span data-translate="footer_rights">Tüm hakları saklıdır.</span></p>
+            <p>&copy; 2026 Arif Özcan. <span data-translate="footer_rights">Tüm hakları saklıdır.</span></p>
         </div>
     </footer>
 
