@@ -448,35 +448,47 @@ function initMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     
-    if (hamburger) {
-        hamburger.addEventListener('click', function() {
-            // Hamburger menü animasyonu
-            this.classList.toggle('active');
-            
-            // Mobil menüyü aç/kapat
-            navLinks.classList.toggle('active');
-            
-            // Menü açıkken body scroll'unu engelle
-            if (navLinks.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
+    if (!hamburger || !navLinks) return;
+    
+    hamburger.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        // Hamburger menü animasyonu
+        this.classList.toggle('active');
+        // Mobil menüyü aç/kapat
+        navLinks.classList.toggle('active');
+        const isOpen = navLinks.classList.contains('active');
+        this.setAttribute('aria-expanded', isOpen);
+        // Menü açıkken body scroll'unu engelle
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    });
+    
+    // Menü linklerine tıklandığında menüyü kapat
+    const navItems = navLinks.querySelectorAll('li a');
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+            navLinks.classList.remove('active');
+            document.body.style.overflow = '';
         });
-        
-        // Menü linklerine tıklandığında menüyü kapat
-        const navItems = document.querySelectorAll('.nav-links li a');
-        
-        navItems.forEach(item => {
-            item.addEventListener('click', () => {
-                if (navLinks.classList.contains('active')) {
-                    hamburger.classList.remove('active');
-                    navLinks.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
-            });
-        });
-    }
+    });
+    
+    // Dışarı tıklanınca menüyü kapat
+    document.addEventListener('click', function(e) {
+        if (navLinks.classList.contains('active') && 
+            !navLinks.contains(e.target) && 
+            !hamburger.contains(e.target)) {
+            hamburger.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+            navLinks.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
 }
 
 /**

@@ -2225,14 +2225,22 @@ footer .container {
 }
 
 @media (max-width: 768px) {
+    /* Mobilde header overflow'u kaldır - açılan menü kesilmesin */
+    header {
+        overflow: visible;
+    }
+    
     .hamburger {
         display: block;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         right: 15px;
-        z-index: 1001;
+        z-index: 1003;
         margin: 0;
+        cursor: pointer;
+        padding: 10px;
+        -webkit-tap-highlight-color: transparent;
     }
     
     .navbar-container {
@@ -2254,15 +2262,21 @@ footer .container {
         background-color: var(--header-bg);
         width: 100%;
         text-align: center;
-        transition: 0.3s;
+        transition: left 0.3s ease, visibility 0.3s ease;
         box-shadow: 0 10px 27px var(--shadow-color);
-        z-index: 100;
+        z-index: 1002;
         margin: 0;
         padding: 1rem 0;
+        visibility: hidden;
+        min-height: calc(100vh - 70px);
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 2rem;
     }
     
     .nav-links.active {
         left: 0;
+        visibility: visible;
     }
     
     .nav-links li {
