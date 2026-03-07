@@ -83,6 +83,8 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
 body {
@@ -91,7 +93,10 @@ body {
     color: var(--text-primary);
     background-color: var(--bg-color);
     overflow-x: hidden;
+    max-width: 100%;
     transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+    overflow-anchor: auto;
 }
 
 .container {
@@ -99,6 +104,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -2225,13 +2231,42 @@ footer .container {
 }
 
 @media (max-width: 768px) {
-    /* Mobilde header overflow'u kaldır - açılan menü kesilmesin */
+    /* Mobil: yatay scroll ve sayfa atlamasını önle */
+    html {
+        overflow-x: hidden;
+        scroll-behavior: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    body {
+        overflow-x: hidden;
+        min-width: 0;
+        overscroll-behavior-x: none;
+        touch-action: pan-y;
+    }
+    
+    /* Header: mobilde overflow verme - menü (fixed) bazı tarayıcılarda kesiliyor. Yatay taşma html'de kesiliyor. */
     header {
         overflow: visible;
     }
     
+    main {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 16px;
+        box-sizing: border-box;
+    }
+    
     .hamburger {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -2239,8 +2274,16 @@ footer .container {
         z-index: 1003;
         margin: 0;
         cursor: pointer;
-        padding: 10px;
+        padding: 12px;
+        min-width: 44px;
+        min-height: 44px;
+        flex-shrink: 0;
         -webkit-tap-highlight-color: transparent;
+        pointer-events: auto;
+    }
+    
+    .hamburger .bar {
+        pointer-events: none;
     }
     
     .navbar-container {
@@ -2252,6 +2295,7 @@ footer .container {
     
     .logo {
         margin-right: auto;
+        margin-left: 1.25rem;
     }
     
     .nav-links {
@@ -2261,6 +2305,7 @@ footer .container {
         flex-direction: column;
         background-color: var(--header-bg);
         width: 100%;
+        max-width: 100vw;
         text-align: center;
         transition: left 0.3s ease, visibility 0.3s ease;
         box-shadow: 0 10px 27px var(--shadow-color);
@@ -2268,10 +2313,12 @@ footer .container {
         margin: 0;
         padding: 1rem 0;
         visibility: hidden;
+        min-height: calc(100dvh - 70px);
         min-height: calc(100vh - 70px);
         align-items: center;
         justify-content: flex-start;
         padding-top: 2rem;
+        box-sizing: border-box;
     }
     
     .nav-links.active {
@@ -2314,6 +2361,44 @@ footer .container {
     
     .resume-actions .btn {
         width: 100%;
+    }
+    
+    /* Tüm bölümlerde yatay taşmayı önle */
+    section,
+    .hero,
+    .about-summary,
+    .about-story,
+    .services,
+    .projects,
+    .contact-form,
+    .contact-section,
+    .education,
+    .experience,
+    .skills,
+    .testimonials,
+    .resume-section,
+    .page-header {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+    
+    .hero {
+        padding-left: 0;
+        padding-right: 0;
+        min-height: 85dvh;
+        min-height: 85vh;
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Geniş tablolar ve pre için taşmayı önle */
+    table,
+    pre {
+        max-width: 100%;
+        overflow-x: auto;
     }
 }
 

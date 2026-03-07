@@ -450,44 +450,48 @@ function initMobileMenu() {
     
     if (!hamburger || !navLinks) return;
     
+    function toggleMenu() {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        const isOpen = navLinks.classList.contains('active');
+        hamburger.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+    
+    function closeMenu() {
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        navLinks.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    // Touchend ile aç/kapa (mobil); preventDefault ile sonradan gelecek click engellenir
+    let touchHandled = false;
+    hamburger.addEventListener('touchend', function(e) {
+        e.preventDefault();
+        touchHandled = true;
+        toggleMenu();
+        setTimeout(function() { touchHandled = false; }, 400);
+    }, { passive: false });
+    
+    // Click (masaüstü; mobilde touchend sonrası click gelirse çift açılmayı önle)
     hamburger.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        // Hamburger menü animasyonu
-        this.classList.toggle('active');
-        // Mobil menüyü aç/kapat
-        navLinks.classList.toggle('active');
-        const isOpen = navLinks.classList.contains('active');
-        this.setAttribute('aria-expanded', isOpen);
-        // Menü açıkken body scroll'unu engelle
-        if (isOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
+        if (touchHandled) return;
+        toggleMenu();
     });
     
-    // Menü linklerine tıklandığında menüyü kapat
-    const navItems = navLinks.querySelectorAll('li a');
-    navItems.forEach(item => {
-        item.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            hamburger.setAttribute('aria-expanded', 'false');
-            navLinks.classList.remove('active');
-            document.body.style.overflow = '';
-        });
+    // Menü linklerine tıklandığında menüyü kapat (sadece click; link kendi sayfasına gidecek)
+    navLinks.querySelectorAll('li a').forEach(item => {
+        item.addEventListener('click', closeMenu);
     });
     
     // Dışarı tıklanınca menüyü kapat
     document.addEventListener('click', function(e) {
-        if (navLinks.classList.contains('active') && 
-            !navLinks.contains(e.target) && 
-            !hamburger.contains(e.target)) {
-            hamburger.classList.remove('active');
-            hamburger.setAttribute('aria-expanded', 'false');
-            navLinks.classList.remove('active');
-            document.body.style.overflow = '';
-        }
+        if (!navLinks.classList.contains('active')) return;
+        if (navLinks.contains(e.target) || hamburger.contains(e.target)) return;
+        closeMenu();
     });
 }
 
@@ -722,8 +726,8 @@ function initAnimations() {
             button.classList.add('float');
         });
         
-        // Scroll olayını dinle ve elementleri göster
-        window.addEventListener('scroll', checkFadeElements);
+        // Scroll olayını dinle (passive: mobil kaydırma akıcılığı ve atlama önleme)
+        window.addEventListener('scroll', checkFadeElements, { passive: true });
         
         // Sayfa yüklendiğinde de kontrol et
         checkFadeElements();
@@ -752,14 +756,20 @@ function checkFadeElements() {
     });
 }
 
-// Hamburger menü için CSS sınıfı ekleyen fonksiyon
-document.addEventListener('scroll', function() {
+// Navbar scroll sınıfı (passive: mobilde scroll atlamasını önler)
+let scrollTicking = false;
+function onScrollNavbar() {
     const navbar = document.querySelector('.navbar');
-    if (navbar) {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
+    if (navbar && window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else if (navbar) {
+        navbar.classList.remove('scrolled');
     }
-}); 
+    scrollTicking = false;
+}
+document.addEventListener('scroll', function() {
+    if (!scrollTicking) {
+        requestAnimationFrame(onScrollNavbar);
+        scrollTicking = true;
+    }
+}, { passive: true }); 
