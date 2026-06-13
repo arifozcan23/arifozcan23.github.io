@@ -189,6 +189,8 @@ const translations = {
         'quote7_author': 'Poet',
         'quote8': '"If you want to make peace with your enemy, you have to work with your enemy. Then he becomes your partner."',
         'quote8_author': 'President',
+        'quote9': '"Sometimes it doesn\'t work. If it doesn\'t work, it might work, you need to try."',
+        'quote9_author': 'Anonymous',
         // Portfolio page
         'portfolio_title': 'My Portfolio',
         'portfolio_subtitle': 'Here are some of my projects and work',
